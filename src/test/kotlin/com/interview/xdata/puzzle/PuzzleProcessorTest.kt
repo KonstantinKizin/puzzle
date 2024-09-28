@@ -1,8 +1,11 @@
-package com.interview.xdata.puzzle.api
+package com.interview.xdata.puzzle
 
+import com.interview.xdata.puzzle.api.ErrorHandler
+import com.interview.xdata.puzzle.api.ModelMapper
+import com.interview.xdata.puzzle.api.PuzzleInputModel
+import com.interview.xdata.puzzle.api.PuzzleOutputModel
 import com.interview.xdata.puzzle.api.io.InputModelReader
 import com.interview.xdata.puzzle.api.io.OutputWriter
-import com.interview.xdata.puzzle.api.mapper.ModelMapper
 import com.interview.xdata.puzzle.core.*
 import io.kotest.core.spec.style.StringSpec
 import io.mockk.every

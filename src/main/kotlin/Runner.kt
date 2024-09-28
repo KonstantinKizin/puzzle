@@ -1,10 +1,8 @@
 import com.interview.xdata.puzzle.api.ErrorHandler
-import com.interview.xdata.puzzle.api.PuzzleInputModel
-import com.interview.xdata.puzzle.api.PuzzleProcessor
+import com.interview.xdata.puzzle.PuzzleProcessor
 import com.interview.xdata.puzzle.api.io.ConsoleJsonOutputWriter
 import com.interview.xdata.puzzle.api.io.JsonFileInputModelReader
-import com.interview.xdata.puzzle.api.mapper.ModelMapper
-import com.interview.xdata.puzzle.core.Solution
+import com.interview.xdata.puzzle.api.ModelMapper
 import com.interview.xdata.puzzle.core.ClassicZebraPuzzle
 
 fun main(args: Array<String>) {

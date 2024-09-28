@@ -1,8 +1,5 @@
-package com.interview.xdata.puzzle.api.mapper
+package com.interview.xdata.puzzle.api
 
-import com.interview.xdata.puzzle.api.ClassicHouseModel
-import com.interview.xdata.puzzle.api.PuzzleOutputModel
-import com.interview.xdata.puzzle.api.SolutionModel
 import com.interview.xdata.puzzle.core.Attribute
 import com.interview.xdata.puzzle.core.Attribute.*
 import com.interview.xdata.puzzle.core.House
