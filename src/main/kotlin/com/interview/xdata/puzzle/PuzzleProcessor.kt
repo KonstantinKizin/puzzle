@@ -17,7 +17,7 @@ class PuzzleProcessor(
     fun process(args: Array<String>) {
         try {
             val inputModel = inputModelReader.readModel(args)
-            val solutions = puzzle.findSolutions(inputModel.statements)
+            val solutions = puzzle.findSolutions(inputModel.constraints)
             outputWriter.write(modelMapper.toApiModel(solutions))
         } catch (throwable: Throwable) {
             errorHandler.handleError(throwable)

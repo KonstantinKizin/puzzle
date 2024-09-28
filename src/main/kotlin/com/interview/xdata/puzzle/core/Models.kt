@@ -8,7 +8,7 @@ enum class Relation {
     LEFT_OF,
 }
 
-data class Statement(val left: Fact, val relation: Relation, val right: Fact)
+data class Constraint(val left: Fact, val relation: Relation, val right: Fact)
 
 enum class Attribute(val possibleValues: Set<String>) {
 

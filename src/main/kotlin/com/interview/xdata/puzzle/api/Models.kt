@@ -1,9 +1,9 @@
 package com.interview.xdata.puzzle.api
 
-import com.interview.xdata.puzzle.core.Statement
+import com.interview.xdata.puzzle.core.Constraint
 import java.io.Serializable
 
-data class PuzzleInputModel(val statements: List<Statement>) : Serializable
+data class PuzzleInputModel(val constraints: List<Constraint>) : Serializable
 
 data class PuzzleOutputModel(val solutions: List<SolutionModel>) : Serializable
 

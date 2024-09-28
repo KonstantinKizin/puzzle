@@ -1,6 +1,6 @@
 {
   "numberOfHouses": 5,
-  "statements": [
+  "constraints": [
     {
       "houseNr": 1,
       "color": "BLUE",

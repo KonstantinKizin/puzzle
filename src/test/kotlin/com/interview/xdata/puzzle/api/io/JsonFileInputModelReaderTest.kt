@@ -16,13 +16,13 @@ class JsonFileInputModelReaderTest : StringSpec({
             )
         )
 
-        inputModel.statements.toSet() shouldBeEqual setOf(
-            Statement(
+        inputModel.constraints.toSet() shouldBeEqual setOf(
+            Constraint(
                 left = Fact(attribute = Attribute.PET, value = "Bird"),
                 relation = Relation.IS,
                 right = Fact(attribute = Attribute.HOUSE_NUMBER, value = "1")
             ),
-            Statement(
+            Constraint(
                 left = Fact(attribute = Attribute.COLOR, value = "Blue"),
                 relation = Relation.IS,
                 right = Fact(attribute = Attribute.HOUSE_NUMBER, value = "1")

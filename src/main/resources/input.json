@@ -1,5 +1,5 @@
 {
-  "statements": [
+  "constraints": [
     {
       "left": {
         "attribute": "COLOR",

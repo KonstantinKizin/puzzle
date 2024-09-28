@@ -4,32 +4,32 @@ import kotlin.math.abs
 
 class ClassicZebraPuzzle {
 
-    fun findSolutions(statements: List<Statement>): List<Solution> {
+    fun findSolutions(constraints: List<Constraint>): List<Solution> {
         val attributes = Attribute.classicValues().toList()
         val tableWidth = Attribute.HOUSE_NUMBER.possibleValues.size
 
         return generatePossibleSolutions(tableWidth, attributes)
-            .filter { checkPossibleSolution(it, statements) }
+            .filter { solution -> verifyAllConstraints(solution, constraints) }
     }
 
-    private fun checkPossibleSolution(solution: Solution, statements: List<Statement>) =
-        statements.all { statement -> doesSolutionSatisfyStatement(statement, solution) }
+    private fun verifyAllConstraints(solution: Solution, constraints: List<Constraint>) =
+        constraints.all { constraint -> verifyConstraint(constraint, solution) }
 
     private fun generatePossibleSolutions(tableWidth: Int, attributes: List<Attribute>): List<Solution> {
         // TODO: Implement generation logic
         return emptyList()
     }
 
-    private fun doesSolutionSatisfyStatement(statement: Statement, solution: Solution): Boolean {
-        val leftFactHouse = findHouseByFact(statement.left, solution.houses)
+    private fun verifyConstraint(constraint: Constraint, solution: Solution): Boolean {
+        val leftFactHouse = findHouseByFact(constraint.left, solution.houses)
 
-        val rightFactHouse = findHouseByFact(statement.right, solution.houses)
+        val rightFactHouse = findHouseByFact(constraint.right, solution.houses)
 
         if (leftFactHouse == null || rightFactHouse == null) {
             return false
         }
 
-        return when (statement.relation) {
+        return when (constraint.relation) {
             Relation.IS -> leftFactHouse.houseNumber == rightFactHouse.houseNumber
             Relation.NEXT_TO -> abs(leftFactHouse.houseNumber - rightFactHouse.houseNumber) == 1
             Relation.LEFT_OF -> leftFactHouse.houseNumber + 1 == rightFactHouse.houseNumber
@@ -44,5 +44,4 @@ class ClassicZebraPuzzle {
             house.facts.any { it.attribute == fact.attribute && it.value == fact.value }
         }
     }
-
 }

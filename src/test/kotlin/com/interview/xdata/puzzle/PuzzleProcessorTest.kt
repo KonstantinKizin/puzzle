@@ -24,8 +24,8 @@ class PuzzleProcessorTest : StringSpec({
     val processor = PuzzleProcessor(modelMapper, outputWriter, inputModelReader, errorHandler, puzzle)
 
     val sampleInputModel = PuzzleInputModel(
-        statements = listOf(
-            Statement(
+        constraints = listOf(
+            Constraint(
                 left = Fact(Attribute.COLOR, "Red"),
                 relation = Relation.IS,
                 right = Fact(Attribute.PET, "Bird")
@@ -36,11 +36,11 @@ class PuzzleProcessorTest : StringSpec({
 
     beforeTest {
         every {
-            inputModelReader.readModel(arrayOf("statements.json"))
+            inputModelReader.readModel(arrayOf("constraints.json"))
         } returns sampleInputModel
 
         every {
-            puzzle.findSolutions(sampleInputModel.statements)
+            puzzle.findSolutions(sampleInputModel.constraints)
         } returns listOf(mockk())
 
         every {
@@ -57,7 +57,7 @@ class PuzzleProcessorTest : StringSpec({
             outputWriter.write(any())
         }
 
-        processor.process(arrayOf("statements.json"))
+        processor.process(arrayOf("constraints.json"))
 
         verify { outputWriter.write(outputModel) }
 
@@ -67,10 +67,10 @@ class PuzzleProcessorTest : StringSpec({
         val exception = ValidationException("Client mistake")
 
         every {
-            inputModelReader.readModel(arrayOf("statements.json"))
+            inputModelReader.readModel(arrayOf("constraints.json"))
         } throws exception
 
-        processor.process(arrayOf("statements.json"))
+        processor.process(arrayOf("constraints.json"))
 
         verify {
             errorHandler.handleError(exception)
@@ -84,7 +84,7 @@ class PuzzleProcessorTest : StringSpec({
             puzzle.findSolutions(any())
         } throws exception
 
-        processor.process(arrayOf("statements.json"))
+        processor.process(arrayOf("constraints.json"))
 
         verify {
             errorHandler.handleError(exception)
