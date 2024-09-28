@@ -1,0 +1,40 @@
+{
+  "numberOfHouses": 5,
+  "statements": [
+    {
+      "houseNr": 1,
+      "color": "BLUE",
+      "pet": "BIRD",
+      "nextTo": null,
+      "leftOf": null
+    },
+    {
+      "houseNr": 2,
+      "color": "GREEN",
+      "pet": "FOX",
+      "nextTo": null,
+      "leftOf": null
+    },
+    {
+      "houseNr": 3,
+      "color": "RED",
+      "pet": "DOG",
+      "nextTo": null,
+      "leftOf": null
+    },
+    {
+      "houseNr": 4,
+      "color": "WHITE",
+      "pet": "NAILS",
+      "nextTo": null,
+      "leftOf": null
+    },
+    {
+      "houseNr": 5,
+      "color": "YELLOW",
+      "pet": "HORSE",
+      "nextTo": null,
+      "leftOf": null
+    }
+  ]
+}

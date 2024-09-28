@@ -1,0 +1,26 @@
+{
+  "statements": [
+    {
+      "left": {
+        "attribute": "COLOR",
+        "value": "Blue"
+      },
+      "relation": "IS",
+      "right": {
+        "attribute": "HOUSE_NUMBER",
+        "value": "1"
+      }
+    },
+    {
+      "left": {
+        "attribute": "PET",
+        "value": "Bird"
+      },
+      "relation": "IS",
+      "right": {
+        "attribute": "HOUSE_NUMBER",
+        "value": "1"
+      }
+    }
+  ]
+}
